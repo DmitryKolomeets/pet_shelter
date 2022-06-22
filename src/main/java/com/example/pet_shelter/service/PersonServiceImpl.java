@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class EmployeeServiceImpl implements PersonService {
+public class PersonServiceImpl implements PersonService {
 
     @Autowired
     private PersonDAO personDAO;
