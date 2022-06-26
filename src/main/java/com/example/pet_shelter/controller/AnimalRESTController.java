@@ -17,7 +17,6 @@ public class AnimalRESTController {
     private AnimalService animalService;
 
     @GetMapping("/animals")
-    @Cacheable(value = "ShowingAllAnimals")
     public List<Animal> showAllEmployees() {
         List<Animal> allAnimals = animalService.getAllAnimals();
         return allAnimals;
@@ -32,7 +31,6 @@ public class AnimalRESTController {
 
 
     @PostMapping("/animals")
-    @Cacheable(value = "AnimalIDAdded")
     public Animal addNewAnimal(@RequestBody Animal animal) {
         animalService.saveAnimal(animal);
         return animal;
@@ -40,7 +38,6 @@ public class AnimalRESTController {
 
 
     @PutMapping("/animals")
-    @Cacheable(value = "AnimalIDUpdated")
     public Animal updateAnimal(@RequestBody Animal animal) {
         animalService.saveAnimal(animal);
         return animal;
@@ -48,9 +45,7 @@ public class AnimalRESTController {
 
 
     @DeleteMapping("/animals/{id}")
-    @Cacheable(value = "AnimalIDDeleted")
     public String deleteAnimal(@PathVariable int id) {
-
         animalService.deleteAnimal(id);
         return "Animal with ID = " + id + " was deleted";
     }
