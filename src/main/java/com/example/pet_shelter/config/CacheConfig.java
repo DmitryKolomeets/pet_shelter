@@ -13,7 +13,6 @@ import java.time.Duration;
 public class CacheConfig {
 
     @Bean
-    @Primary
     public RedisCacheConfiguration redisCacheConfiguration () {
         return RedisCacheConfiguration.defaultCacheConfig()
                 .entryTtl(Duration.ofMinutes(15))
