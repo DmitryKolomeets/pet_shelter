@@ -70,10 +70,7 @@
 			<version>2.7.1</version>
 		</dependency>
 
-
-
 	</dependencies>
-
 
 	<build>
 		<plugins>
