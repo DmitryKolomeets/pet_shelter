@@ -36,7 +36,6 @@ public class PersonDAOImpl implements PersonDAO {
     @Override
     public Person getPerson(int id) {
         Session session = entityManager.unwrap(Session.class);
-
         Person person = session.get(Person.class, id);
         return person;
     }

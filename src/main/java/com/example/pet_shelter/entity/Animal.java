@@ -30,4 +30,5 @@ public class Animal {
     @Column(name="breed")
     private String breed;
 
+
 }

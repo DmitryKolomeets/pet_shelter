@@ -30,6 +30,7 @@ public class AnimalRESTController {
     }
 
 
+
     @PostMapping("/animals")
     public Animal addNewAnimal(@RequestBody Animal animal) {
         animalService.saveAnimal(animal);

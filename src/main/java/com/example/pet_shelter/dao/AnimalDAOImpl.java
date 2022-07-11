@@ -2,10 +2,11 @@ package com.example.pet_shelter.dao;
 
 
 import com.example.pet_shelter.entity.Animal;
-import org.hibernate.Session;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.hibernate.Session;
+import org.hibernate.query.Query;
+
 
 import javax.persistence.EntityManager;
 import java.util.List;
@@ -23,7 +24,7 @@ public class AnimalDAOImpl implements AnimalDAO {
         Session session = entityManager.unwrap(Session.class);
         Query<Animal> query = session.createQuery("from Animal", Animal.class);
         List<Animal> allAnimals = query.getResultList();
-        return allAnimals;
+       return allAnimals;
     }
 
 

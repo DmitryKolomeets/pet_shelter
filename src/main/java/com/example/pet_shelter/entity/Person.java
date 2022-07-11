@@ -35,4 +35,5 @@ public class Person {
     @Column(name="sex")
     private char sex;
 
+
 }

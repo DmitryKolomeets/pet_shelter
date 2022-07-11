@@ -5,8 +5,9 @@ import com.example.pet_shelter.dao.AnimalDAO;
 import com.example.pet_shelter.entity.Animal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
+
 import java.util.List;
 
 @Service
