@@ -1,4 +1,4 @@
-package com.example.pet_shelter.entity;
+package com.example.pet_shelter.model;
 
 
 import lombok.AllArgsConstructor;
@@ -7,13 +7,14 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
 @Entity
-@Table(name= "animals")
-public class Animal {
+@Table(name= "persons")
+public class Person {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -24,11 +25,15 @@ public class Animal {
     @Column(name="name")
     private String name;
 
-    @Column(name="family")
-    private String family;
+    @Column(name="surname")
+    private String surname;
 
-    @Column(name="breed")
-    private String breed;
+
+    @Column(name="age")
+    private  int age;
+
+    @Column(name="sex")
+    private char sex;
 
 
 }
