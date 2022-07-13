@@ -28,7 +28,7 @@ public class AnimalServiceImpl implements AnimalService {
 
     @Override
     @Transactional
-    public  void saveAnimal (Animal animal) {repository.save(animal);}
+    public Animal saveAnimal (Animal animal) {repository.save(animal);  return animal;}
 
 
     @Override

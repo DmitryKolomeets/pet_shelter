@@ -12,7 +12,7 @@ public interface AnimalService {
 
     public List<Animal> getAllAnimals();
 
-    public  void saveAnimal(Animal animal);
+    public Animal saveAnimal(Animal animal);
 
     public Optional<Animal> getAnimal(int id);
 

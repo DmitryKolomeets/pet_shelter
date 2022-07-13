@@ -2,6 +2,7 @@ package com.example.pet_shelter.model;
 
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 
 @Entity
 @Table(name= "persons")
@@ -34,6 +36,5 @@ public class Person {
 
     @Column(name="sex")
     private char sex;
-
 
 }

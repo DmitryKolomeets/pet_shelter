@@ -13,7 +13,7 @@ public interface PersonService {
 
     public List<Person> getAllPersons();
 
-    public  void savePerson(Person person);
+    public Person savePerson(Person person);
 
     public Optional<Person> getPerson(int id);
 
