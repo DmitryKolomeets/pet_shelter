@@ -38,6 +38,7 @@ public class AnimalServiceImpl implements AnimalService {
     @Override
     @Transactional
     public void deleteAnimal(int id) {repository.deleteById(id);}
+
 }
 
 
