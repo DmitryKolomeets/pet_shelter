@@ -1,42 +1,45 @@
 package com.example.pet_shelter.service;
 
 
-import com.example.pet_shelter.dao.AnimalDAO;
-import com.example.pet_shelter.entity.Animal;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
+import com.example.pet_shelter.model.Animal;
+import com.example.pet_shelter.repository.AnimalRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AnimalServiceImpl implements AnimalService {
 
-    @Autowired
-    private AnimalDAO animalDAO;
+    private final AnimalRepository repository;
+
+    public AnimalServiceImpl(AnimalRepository repository) {
+        this.repository = repository;
+    }
+
 
     @Override
     @Transactional
-    public List<Animal> getAllAnimals() {
-        return animalDAO.getAllAnimals();
-    }
+    public List<Animal> getAllAnimals() {return (List <Animal>) repository.findAll(); }
+
 
     @Override
     @Transactional
-    public  void saveAnimal(Animal animal) {
-        animalDAO.saveAnimal(animal);
-    }
+    public Animal saveAnimal (Animal animal) {repository.save(animal);  return animal;}
+
 
     @Override
     @Transactional
-    public Animal getAnimal(int id) {
-        return animalDAO.getAnimal(id);
-    }
+    public Optional<Animal> getAnimal(int id) {return repository.findById(id);}
 
     @Override
     @Transactional
-    public void deleteAnimal(int id) {
-        animalDAO.deleteAnimal(id);
-    }
-
+    public void deleteAnimal(int id) {repository.deleteById(id);}
 }
+
+
+
+

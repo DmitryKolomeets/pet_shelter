@@ -1,7 +1,6 @@
 package com.example.pet_shelter.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.RedisSerializationContext;
@@ -13,7 +12,6 @@ import java.time.Duration;
 public class CacheConfig {
 
     @Bean
-    @Primary
     public RedisCacheConfiguration redisCacheConfiguration () {
         return RedisCacheConfiguration.defaultCacheConfig()
                 .entryTtl(Duration.ofMinutes(15))
