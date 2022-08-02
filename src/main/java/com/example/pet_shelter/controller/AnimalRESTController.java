@@ -1,13 +1,14 @@
 package com.example.pet_shelter.controller;
 
 
-import com.example.pet_shelter.entity.Animal;
+import com.example.pet_shelter.model.Animal;
 import com.example.pet_shelter.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -24,10 +25,11 @@ public class AnimalRESTController {
 
     @GetMapping("/animals/{id}")
     @Cacheable(value = "AnimalID")
-    public Animal getAnimal(@PathVariable int id) {
-        Animal employee = animalService.getAnimal(id);
+    public Optional<Animal> getAnimal(@PathVariable int id) {
+        Optional<Animal> employee = animalService.getAnimal(id);
         return employee;
     }
+
 
 
     @PostMapping("/animals")
