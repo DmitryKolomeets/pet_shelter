@@ -3,6 +3,7 @@ package com.example.pet_shelter.service;
 import com.example.pet_shelter.model.Animal;
 import org.springframework.stereotype.Repository;
 
+
 import java.util.List;
 import java.util.Optional;
 
